@@ -27,7 +27,7 @@ func main() {
 
 	fileData, err := ioutil.ReadFile(path.Join("wallets", currAddrPath))
 	if err != nil {
-		log.Fatalf("Could not read the file. Details: \v\n", err)
+		log.Fatalf("Could not read the file. Details: %v\n", err)
 	}
 
 	fmt.Println(ks.Accounts())
@@ -35,7 +35,7 @@ func main() {
 
 	account, err := ks.Import(fileData, password, password)
 	if err != nil {
-		log.Fatalf("Unable to import data. Details: \v\n", err)
+		log.Fatalf("Unable to import data. Details: %v\n", err)
 	}
 
 	fmt.Println(account.Address.Hex()) // 0x20F8D42FB0F667F2E53930fed426f225752453b3
