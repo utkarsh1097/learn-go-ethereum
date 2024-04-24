@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	// Generate a private key for your future wallet
 	privateKey, err := crypto.GenerateKey()
 	if err != nil {
 		log.Fatal(err)
