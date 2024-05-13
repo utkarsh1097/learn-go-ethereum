@@ -72,8 +72,8 @@ func main() {
 		    }
 		**/
 
-		if from, err := types.Sender(types.NewEIP155Signer(chainID), tx); err == nil {
-			fmt.Println(from.Hex()) // 0x0fD081e3Bb178dc45c0cb23202069ddA57064258
+		if fromAddress, err := types.Sender(types.NewEIP155Signer(chainID), tx); err == nil {
+			fmt.Println(fromAddress.Hex()) // 0x0fD081e3Bb178dc45c0cb23202069ddA57064258
 		}
 
 		receipt, err := client.TransactionReceipt(context.Background(), tx.Hash())
